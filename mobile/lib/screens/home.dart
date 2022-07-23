@@ -21,12 +21,23 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: IconButton(
-            color: const Color(0xffff8e0d),
-            onPressed: () {
-              _scaffoldState.currentState?.openDrawer();
-            },
-            icon: const Icon(Icons.menu)),
+        leading: Padding(
+          padding: const EdgeInsets.fromLTRB(15, 20, 0, 0),
+          child: Container(
+            width: 20,
+            height: 20,
+            decoration: BoxDecoration(
+              color: Colors.black,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: IconButton(
+                color: const Color(0xffff8e0d),
+                onPressed: () {
+                  _scaffoldState.currentState?.openDrawer();
+                },
+                icon: const Icon(Icons.menu)),
+          ),
+        ),
       ),
 
       //Drawer
