@@ -21,23 +21,12 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: Padding(
-          padding: const EdgeInsets.fromLTRB(15, 20, 0, 0),
-          child: Container(
-            width: 20,
-            height: 20,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: IconButton(
-                color: const Color(0xffff8e0d),
-                onPressed: () {
-                  _scaffoldState.currentState?.openDrawer();
-                },
-                icon: const Icon(Icons.menu)),
-          ),
-        ),
+        leading: IconButton(
+            color: const Color(0xffff8e0d),
+            onPressed: () {
+              _scaffoldState.currentState?.openDrawer();
+            },
+            icon: const Icon(Icons.menu)),
       ),
 
       //Drawer
@@ -50,53 +39,50 @@ class _HomePageState extends State<HomePage> {
               DrawerHeader(
                 child: Column(
                   children: [
-                    // Row(
-                    //   mainAxisAlignment: MainAxisAlignment.center,
-                    //   children: [
-                    //     ClipRRect(
-                    //       child: Image.asset(
-                    //         "images/passenger.png",
-                    //         width: 200,
-                    //       ),
-                    //     )
-                    //   ],
-                    // ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ClipRRect(
+                          child: Image.asset(
+                            "assets/images/passenger.png",
+                            width: MediaQuery.of(context).size.width / 5,
+                            height: MediaQuery.of(context).size.height * 0.09,
+                          ),
+                        )
+                      ],
+                    ),
 
-                    const Expanded(
-                      child: Text(
-                        "Passenger",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontWeight: FontWeight.normal,
-                          color: Colors.black,
-                          fontSize: 18,
-                          fontFamily: "Poppins",
-                        ),
+                    const Text(
+                      "Passenger",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontFamily: "Poppins",
                       ),
                     ),
 
                     //Edit Profile button
-                    Expanded(
-                      child: TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          "Edit Profile",
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontFamily: "Poppins",
-                            color: Colors.blue,
-                          ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "Edit Profile",
+                        style: TextStyle(
+                          fontSize: 11,
+                          fontFamily: "Poppins",
+                          color: Colors.blue,
                         ),
                       ),
                     ),
 
                     //Divider
-                    Expanded(
-                      child: Divider(
-                        color: Colors.black.withOpacity(0.3),
-                        thickness: 2,
-                      ),
-                    ),
+                    // Expanded(
+                    //   child: Divider(
+                    //     color: Colors.black.withOpacity(0.3),
+                    //     thickness: 2,
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -264,7 +250,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Color(0xffFF8E0D),
+                        primary: const Color(0xffFF8E0D),
                       ),
                       onPressed: () {},
                       child: const Text(
@@ -336,7 +322,7 @@ class _HomePageState extends State<HomePage> {
                             //maxLines: 2,
                             decoration: InputDecoration(
                               prefixIcon: const Icon(Icons.search),
-                              hintText: "Where are you going",
+                              hintText: "Where are you going?",
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),

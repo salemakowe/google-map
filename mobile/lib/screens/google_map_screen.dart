@@ -12,7 +12,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
   late GoogleMapController mapController;
 
 //Used the Latitude and Longitude of Nigeria
-  final LatLng _center = const LatLng(9.0778, 8.6775);
+  final LatLng _center = const LatLng(9.0778, -8.6775);
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
