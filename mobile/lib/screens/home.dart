@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  TextEditingController userdestination = TextEditingController();
+  TextEditingController userdestinationController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   final GlobalKey<ScaffoldState> _scaffoldState = GlobalKey();
 
@@ -317,9 +317,8 @@ class _HomePageState extends State<HomePage> {
                         child: Form(
                           key: _formKey,
                           child: TextFormField(
-                            controller: userdestination,
+                            controller: userdestinationController,
                             keyboardType: TextInputType.text,
-                            //maxLines: 2,
                             decoration: InputDecoration(
                               prefixIcon: const Icon(Icons.search),
                               hintText: "Where are you going?",
@@ -328,11 +327,14 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             onEditingComplete: (() {
-                              Navigator.push(
+                              String destination =
+                                  userdestinationController.text;
+                              Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => ChangeRider(
-                                      userdestination: userdestination.text),
+                                  builder: (context) {
+                                    return ChangeRider(destination);
+                                  },
                                 ),
                               );
                             }),
